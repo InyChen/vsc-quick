@@ -19,8 +19,8 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.quick",
+				"title": "Quick快速开发"
 			}
 		],
 		"viewsContainers": {
