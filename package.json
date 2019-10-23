@@ -26,25 +26,17 @@
 		"viewsContainers": {
 			"activitybar": [
 				{
-					"id": "beautifulGirl",
+					"id": "quickSideBar",
 					"title": "美女",
 					"icon": "src/icon.svg"
 				}
 			]
 		},
 		"views": {
-			"beautifulGirl": [
+			"quickSideBar": [
 				{
-					"id": "beautifulGirl1",
-					"name": "国内美女"
-				},
-				{
-					"id": "beautifulGirl2",
-					"name": "国外美女"
-				},
-				{
-					"id": "beautifulGirl3",
-					"name": "人妖"
+					"id": "quickSideBarView1",
+					"name": "项目列表"
 				}
 			]
 		}
