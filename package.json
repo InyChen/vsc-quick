@@ -27,7 +27,7 @@
 			"activitybar": [
 				{
 					"id": "quickSideBar",
-					"title": "美女",
+					"title": "Quick快速开发",
 					"icon": "src/icon.svg"
 				}
 			]
