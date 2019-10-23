@@ -20,7 +20,6 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Hello World!');
 	});
 
-	vscode.window.showInformationMessage('欢迎使用quick');
 	context.subscriptions.push(disposable);
 }
 

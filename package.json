@@ -28,7 +28,7 @@
 				{
 					"id": "quickSideBar",
 					"title": "Quick快速开发",
-					"icon": "src/icon.svg"
+					"icon": "images/icon.svg"
 				}
 			]
 		},
