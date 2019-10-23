@@ -13,6 +13,7 @@
 	"activationEvents": [
 		"*"
 	],
+	"icon": "https://static.lianhaikeji.com/lib/imgs/quickicon.png",
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
@@ -26,7 +27,7 @@
 				{
 					"id": "beautifulGirl",
 					"title": "美女",
-					"icon": "src/logo.png"
+					"icon": "src/icon.svg"
 				}
 			]
 		},
