@@ -3,7 +3,7 @@
 	"displayName": "vsc-quick",
 	"description": "quick way of fullstack development",
 	"author": "chen jia lin",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"publisher": "vsc-quick",
 	"engines": {
 		"vscode": "^1.39.0"
