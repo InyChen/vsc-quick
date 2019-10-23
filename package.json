@@ -2,7 +2,7 @@
 	"name": "vsc-quick",
 	"displayName": "vsc-quick",
 	"description": "",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "vsc-quick",
 	"engines": {
 		"vscode": "^1.39.0"
