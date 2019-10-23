@@ -1,7 +1,8 @@
 {
 	"name": "vsc-quick",
 	"displayName": "vsc-quick",
-	"description": "",
+	"description": "quick way of fullstack development",
+	"author": "chen jia lin",
 	"version": "0.0.4",
 	"publisher": "vsc-quick",
 	"engines": {
