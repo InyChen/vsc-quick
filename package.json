@@ -14,32 +14,62 @@
 	"activationEvents": [
 		"*"
 	],
-	"icon": "images/icon.png",
+	"icon": "resources/icon.png",
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "extension.quick",
-				"title": "Quick快速开发"
-			}
-		],
 		"viewsContainers": {
 			"activitybar": [
 				{
 					"id": "quickSideBar",
 					"title": "Quick快速开发",
-					"icon": "images/icon.svg"
+					"icon": "resources/icon.svg"
 				}
 			]
 		},
 		"views": {
+			"explorer": [
+				{
+					"id": "projectsView",
+					"name": "Quick项目列表"
+				}
+			],
 			"quickSideBar": [
 				{
 					"id": "quickSideBarView1",
 					"name": "项目列表"
 				}
 			]
-		}
+		},
+		"commands": [
+			{
+				"command": "quick.refreshProjects",
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "quick.refreshProjects",
+					"when": "view == projectsView",
+					"group": "navigation"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"title": "Quick访问秘钥",
+				"properties": {
+					"quick.token": {
+						"type": "string",
+						"default": false
+					}
+				}
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -58,5 +88,8 @@
 		"typescript": "^3.3.1",
 		"tslint": "^5.12.1",
 		"vscode-test": "^1.2.0"
+	},
+	"dependencies": {
+		"axios": "^0.19.0"
 	}
 }
