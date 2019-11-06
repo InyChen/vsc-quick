@@ -27,33 +27,80 @@
 			]
 		},
 		"views": {
-			"explorer": [
+			"quickSideBar": [
 				{
 					"id": "projectsView",
 					"name": "Quick项目列表"
-				}
-			],
-			"quickSideBar": [
-				{
-					"id": "quickSideBarView1",
-					"name": "项目列表"
 				}
 			]
 		},
 		"commands": [
 			{
-				"command": "quick.refreshProjects",
-				"title": "Refresh",
+				"command": "extension.quick.refreshProjects",
+				"title": "刷新项目列表",
 				"icon": {
 					"light": "resources/light/refresh.svg",
 					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "extension.quick.addProject",
+				"title": "新建项目",
+				"icon": {
+					"light": "resources/light/add.svg",
+					"dark": "resources/dark/add.svg"
+				}
+			},
+			{
+				"command": "extension.quick.addComponent",
+				"title": "添加组件",
+				"icon": {
+					"light": "resources/light/add.svg",
+					"dark": "resources/dark/add.svg"
+				}
+			},
+			{
+				"command": "extension.quick.publishComponent",
+				"title": "发布组件",
+				"icon": {
+					"light": "resources/light/add.svg",
+					"dark": "resources/dark/add.svg"
+				}
+			},
+			{
+				"command": "extension.quick.openComponent",
+				"title": "编辑组件",
+				"icon": {
+					"light": "resources/light/edit.svg",
+					"dark": "resources/dark/edit.svg"
 				}
 			}
 		],
 		"menus": {
 			"view/title": [
 				{
-					"command": "quick.refreshProjects",
+					"command": "extension.quick.addProject",
+					"when": "view == projectsView",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.quick.refreshProjects",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "extension.quick.publishComponent",
+					"when": "view == projectsView",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.quick.addComponent",
+					"when": "view == projectsView",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.quick.openComponent",
 					"when": "view == projectsView",
 					"group": "navigation"
 				}
@@ -61,11 +108,16 @@
 		},
 		"configuration": [
 			{
-				"title": "Quick访问秘钥",
+				"title": "Quick",
 				"properties": {
-					"quick.token": {
-						"type": "string",
-						"default": false
+					"quick.userName": {
+						"type": "string"
+					},
+					"quick.secret": {
+						"type": "string"
+					},
+					"quick.workspace": {
+						"type": "string"
 					}
 				}
 			}

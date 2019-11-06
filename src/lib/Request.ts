@@ -6,42 +6,35 @@ axios.defaults.baseURL = config.apiBasePath;
 
 axios.interceptors.request.use(
   function (config) {
-    const token = vscode.workspace.getConfiguration('quick').get('token');
-    vscode.window.showInformationMessage('token:'+token);
-    if (token) {
-      config.headers.token = token;
-    } else {
-      console.warn('no token');
-    }
+    const userName = vscode.workspace.getConfiguration('quick').get('userName');
+    const secret = vscode.workspace.getConfiguration('quick').get('secret');
+    config.headers["user-name"] = userName || "";
+    config.headers.secret = secret || "";
     return config;
-  },
-  function (error) {
-    console.log('request error:' + error);
-    return Promise.resolve({
-      status: 500,
-      error: '请求失败,请检查网络:' + error
-    });
   }
 );
 
-// Add a response interceptor
-axios.interceptors.response.use(
-  function (response) {
-    let data = response.data;
-    if (data) {
-      return data;
-    }else{
-        vscode.window.showInformationMessage('Hello World!');
+export default {
+  async get(url: string): Promise<any> {
+    const rs = await axios.get(url);
+    if (rs.status === 200) {
+      return rs.data;
+    } else {
+      return {
+        status: rs.status,
+        error: "网络错误"
+      };
     }
-    return response;
   },
-  function (error) {
-    console.log('response error:' + error);
-    return Promise.resolve({
-      status: 500,
-      error: '返回数据处理失败:' + error
-    });
+  async post(url: string, params: Object): Promise<any> {
+    const rs = await axios.post(url, params);
+    if (rs.status === 200) {
+      return rs.data;
+    } else {
+      return {
+        status: rs.status,
+        error: "网络错误"
+      };
+    }
   }
-);
-
-export default axios;
+};

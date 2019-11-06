@@ -1,3 +1,3 @@
 export default {
-    apiBasePath:""
+    apiBasePath:"http://localhost:12307/"
 };
